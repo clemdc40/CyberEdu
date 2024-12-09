@@ -1,0 +1,138 @@
+/* Style de base */
+body {
+    background-color: #121212; /* Fond sombre */
+    color: #E0E0E0; /* Texte clair */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header et footer */
+header, footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #1F1F1F; /* Fond sombre pour le header et le footer */
+    color: #E0E0E0;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    margin: 0 1rem;
+}
+
+nav ul li a {
+    color: #E0E0E0;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #8A2BE2;
+}
+
+/* Titre principal */
+h1 {
+    text-align: center;
+    color: #8A2BE2; /* Couleur violette */
+    margin-bottom: 1rem;
+}
+
+/* Formulaire */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Aligne les éléments à gauche */
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 1.5rem;
+    background-color: #1F1F1F;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+form label {
+    margin-bottom: 0.3rem;
+    font-weight: bold;
+    color: #E0E0E0;
+}
+
+form input[type="text"],
+form textarea,
+form select,
+form input[type="file"],
+form input[type="number"] {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #333;
+    border-radius: 5px;
+    background-color: #1F1F1F;
+    color: #E0E0E0;
+    font-size: 1rem;
+}
+
+form .form-group {
+    width: 100%;
+    display: flex;
+    flex-direction: column; /* Gère l'empilement des éléments */
+    margin-bottom: 1.5rem;
+}
+
+form .form-inline-group {
+    display: flex;
+    justify-content: space-between; /* Espacement égal entre les éléments */
+    align-items: center;
+    width: 100%;
+}
+
+form .form-inline-group label {
+    flex: 1; /* Permet aux labels de prendre plus de place */
+    margin-right: 1rem;
+}
+
+form .form-inline-group input,
+form .form-inline-group select {
+    flex: 2; /* Les champs prennent plus d'espace que les labels */
+}
+
+form textarea {
+    min-height: 100px; /* Donne une hauteur minimale */
+}
+
+button {
+    align-self: center; /* Centre le bouton dans le formulaire */
+    background-color: #8A2BE2;
+    color: white;
+    padding: 0.7rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #6A1BA2;
+}
+.lesson-content {
+    padding: 1rem;
+    background-color: #1F1F1F;
+    border-radius: 8px;
+    color: #E0E0E0;
+    line-height: 1.6;
+}
+
+.lesson-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}

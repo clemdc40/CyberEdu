@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberEdu - Créer une Leçon</title>
+    <link rel="stylesheet" href="css/creer.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="explorer.html">Leçons</a></li>
+                <li><a href="creer.html">Créer</a></li>
+                <li><a href="profil.html">Profil</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Créer une Nouvelle Leçon</h1>
+        <form id="lessonForm" method="POST" action="creer_lecon.php" enctype="multipart/form-data" class="form-container">
+            <section class="form-section">
+                <h2>Informations de base</h2>
+                <label for="lessonTitle">Titre</label>
+                <input type="text" id="lessonTitle" name="title" placeholder="Titre de la leçon" required>
+                
+                <label for="lessonDescription">Description</label>
+                <textarea id="lessonDescription" name="description" placeholder="Description de la leçon" required></textarea>
+                
+                <label for="lessonLevel">Niveau</label>
+                <select id="lessonLevel" name="level">
+                    <option value="Débutant">Débutant</option>
+                    <option value="Intermédiaire">Intermédiaire</option>
+                    <option value="Avancé">Avancé</option>
+                </select>
+                
+                <label for="lessonDuration">Durée (minutes)</label>
+                <input type="number" id="lessonDuration" name="duration" value="30" min="1" required>
+
+                <label for="coverImage">Image de couverture</label>
+                <input type="file" id="coverImage" name="coverImage" accept="image/*">
+            </section>
+            <section class="form-section">
+                <h2>Contenu de la leçon</h2>
+                <!-- Ajouter une simple zone de texte HTML -->
+                <label for="lessonContent">Contenu de la leçon</label>
+                <textarea id="lessonContent" name="content" placeholder="Écrivez ici en HTML..." rows="10" style="width: 100%;"></textarea>
+            </section>
+            <button type="submit" class="btn">Créer la leçon</button>
+        </form>
+    </main>
+    <footer>
+        <p>&copy; 2024 CyberEdu - Tous droits réservés</p>
+    </footer>
+</body>
+</html>
