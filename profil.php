@@ -20,4 +20,49 @@ try {
     // Gestion des erreurs de connexion
     die("Erreur de connexion : " . $e->getMessage());
 }
+
 ?>
+
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil Utilisateur</title>
+    <link rel="stylesheet" href="css/profil.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="explorer.html">Leçons</a></li>
+                <li><a href="creer.html">Créer</a></li>
+                <li><a href="profil.php">Profil</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="profile-container">
+            <div class="profile-info">
+                <h2>Clément Da Cruz</h2>
+                <p class="email">clementdacruz2012@gmail.com</p>
+            </div>
+            <div class="profile-stats">
+                <div class="stat">
+                    <h3><?php echo $lessonCount; ?></h3>
+                    <p>Leçons</p>
+                </div>
+            </div>
+            <div class="progression">
+                <h3>Progression récente</h3>
+                <div class="progress-container">
+                    <!-- Progression récente sera ajoutée ici -->
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 CyberEdu - Tous droits réservés</p>
+    </footer>
+</body>
+</html>
