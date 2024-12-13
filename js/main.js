@@ -38,6 +38,18 @@ document.addEventListener("DOMContentLoaded", () => {
                 `;
                 lessonsContainer.appendChild(card);
             });
+            
+            document.querySelectorAll(".card-image").forEach((img) => {
+                img.onload = () => {
+                    if (img.naturalWidth > img.naturalHeight) {
+                        img.style.width = "auto";
+                        img.style.height = "100%";
+                    } else {
+                        img.style.width = "100%";
+                        img.style.height = "auto";
+                    }
+                };
+            });
 
             // Ajouter des écouteurs pour les boutons "Supprimer"
             const deleteButtons = document.querySelectorAll(".delete-lesson");
