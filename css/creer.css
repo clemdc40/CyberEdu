@@ -6,7 +6,34 @@ body {
     margin: 0;
     padding: 0;
 }
+/* Mode clair par défaut */
+body {
+    background-color: #ffffff;
+    color: #000000;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
 
+.theme-button {
+    margin-left: auto;
+    padding: 10px 20px;
+    cursor: pointer;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+/* Mode sombre */
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+.theme-button.dark-mode {
+    background-color: #f1c40f;
+    color: black;
+}
 /* Header et footer */
 header, footer {
     text-align: center;
