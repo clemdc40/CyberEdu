@@ -71,24 +71,28 @@ main {
 
 .profile-stats {
     display: flex;
-    justify-content: space-between;
-    margin-bottom: 2rem;
-    text-align: center;
+    justify-content: center; 
+    align-items: center; 
+    
 }
 
-.stat {
+.stat{    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
+    width: 150px; 
 }
 
 .stat h3 {
     font-size: 1.5rem;
-    margin: 0;
     color: #8A2BE2;
 }
 
+
 .stat p {
     font-size: 0.9rem;
-    margin: 0;
 }
 
 .progression {
