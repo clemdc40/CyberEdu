@@ -15,13 +15,13 @@ try {
     $result = $stmt->fetch(PDO::FETCH_ASSOC);
 
     // Récupération du nombre de leçons
-    $lessonCount = $result['lesson_count'] ?? 0;
+    $lessonCount = isset($result['lesson_count']) ? $result['lesson_count'] : 0;
 } catch (PDOException $e) {
     // Gestion des erreurs de connexion
     die("Erreur de connexion : " . $e->getMessage());
 }
-
 ?>
+
 
 <html lang="fr">
 <head>

@@ -33,9 +33,33 @@ document.addEventListener("DOMContentLoaded", () => {
                         <p>${lesson.description}</p>
                         <p><strong>${lesson.duration} minutes</strong></p>
                         <a href="lesson.php?id=${lesson.id}" class="btn">Commencer la leçon</a>
+                        <button class="btn delete-lesson" data-id="${lesson.id}">Supprimer la leçon</button>
                     </div>
                 `;
                 lessonsContainer.appendChild(card);
+            });
+
+            // Ajouter des écouteurs pour les boutons "Supprimer"
+            const deleteButtons = document.querySelectorAll(".delete-lesson");
+            deleteButtons.forEach((button) => {
+                button.addEventListener("click", async (event) => {
+                    const lessonId = event.target.getAttribute("data-id");
+                    if (confirm("Êtes-vous sûr de vouloir supprimer cette leçon ?")) {
+                        try {
+                            const deleteResponse = await fetch(`delete_lesson.php?id=${lessonId}`, {
+                                method: "DELETE",
+                            });
+                            if (deleteResponse.ok) {
+                                alert("Leçon supprimée avec succès !");
+                                loadLessons(); // Recharge les leçons après suppression
+                            } else {
+                                alert("Une erreur est survenue lors de la suppression.");
+                            }
+                        } catch (error) {
+                            console.error("Erreur lors de la suppression :", error);
+                        }
+                    }
+                });
             });
         } catch (error) {
             console.error("Erreur lors du chargement des leçons :", error);
@@ -70,4 +94,28 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     }
+    // --- Gestion du mode sombre et clair ---
+    const themeToggleButton = document.getElementById('themeToggle');
+    const body = document.body;
+
+    // Vérifier si un thème est déjà stocké dans localStorage
+    const currentTheme = localStorage.getItem('theme');
+    if (currentTheme === 'dark') {
+        body.classList.add('dark-mode');
+        themeToggleButton.textContent = 'Mode Clair';
+    }
+
+    // Ajouter un événement au bouton pour basculer le thème
+    themeToggleButton.addEventListener('click', () => {
+        body.classList.toggle('dark-mode');
+
+        // Mettre à jour le texte du bouton
+        if (body.classList.contains('dark-mode')) {
+            themeToggleButton.textContent = 'Mode Clair';
+            localStorage.setItem('theme', 'dark'); // Stocker le thème sombre
+        } else {
+            themeToggleButton.textContent = 'Mode Sombre';
+            localStorage.setItem('theme', 'light'); // Stocker le thème clair
+        }
+    });
 });
