@@ -1,0 +1,168 @@
+/* Style général */
+body {
+    background-color: #121212;
+    color: #E0E0E0;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header, footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #1F1F1F;
+    color: #E0E0E0;
+}
+
+h1 {
+    text-align: center;
+    color: #8A2BE2; /* Violet */
+    margin-bottom: 1rem;
+}
+
+main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: #1F1F1F;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.lesson-content {
+    margin-top: 1rem;
+    line-height: 1.6;
+    color: #E0E0E0;
+}
+
+/* Navigation */
+nav {
+    background-color: #1F1F1F;
+    padding: 1rem 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 2rem;
+}
+
+nav ul li a {
+    color: #E0E0E0;
+    font-size: 1rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #8A2BE2;
+    color: #FFF;
+    transform: scale(1.1);
+}
+
+nav ul li a.active {
+    background-color: #8A2BE2;
+    color: #FFF;
+}
+
+/* Cartes de leçons */
+.card {
+    background-color: #1F1F1F;
+    color: #E0E0E0;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    padding: 1.5rem;
+    margin: 1rem 0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.card-content {
+    text-align: center;
+}
+
+.card-content h2 {
+    color: #8A2BE2;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.card-content p {
+    font-size: 1rem;
+    color: #C0C0C0;
+    margin-bottom: 1rem;
+}
+
+/* Conteneur pour les boutons */
+.card-buttons {
+    display: flex;
+    justify-content: space-between; /* Espace entre les boutons */
+    gap: 10px; /* Espacement entre les boutons */
+    margin-top: 10px; /* Espacement avec les autres éléments */
+}
+
+/* Style général des boutons */
+.card-buttons .btn {
+    flex: 1; /* Les boutons occupent la même largeur */
+    text-align: center; /* Centrer le texte à l'intérieur des boutons */
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+}
+
+/* Style pour le bouton "Commencer la leçon" */
+.card-buttons a.btn {
+    background-color: #8A2BE2; /* Violet */
+    color: #FFF; /* Texte blanc */
+    text-decoration: none;
+}
+
+.card-buttons a.btn:hover {
+    background-color: #6a1bb6; /* Violet plus foncé au survol */
+}
+
+/* Style pour le bouton "Supprimer" */
+.card-buttons .delete-btn {
+    background-color: #e74c3c; /* Rouge */
+    color: #FFF; /* Texte blanc */
+    border: none;
+}
+
+.card-buttons .delete-btn:hover {
+    background-color: #c0392b; /* Rouge plus foncé au survol */
+    transform: scale(1.05); /* Effet d'agrandissement au survol */
+}
+
+/* Message de recherche */
+#noResultMessage {
+    color: #C0C0C0;
+    font-size: 1rem;
+    text-align: center;
+    margin-top: 1rem;
+}
